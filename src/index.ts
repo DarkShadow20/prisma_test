@@ -45,4 +45,14 @@ async function getUser(email:string){
     console.log(res)
 }
 
-getUser("kunal@gmail.com")
+async function deleteUser(email:string){
+    const res = await prisma.user.delete({
+        where:{
+            email:email
+        }
+    })
+    console.log(res)
+}
+
+deleteUser("kunal@gmail.com")
+//getUser("kunal@gmail.com")
